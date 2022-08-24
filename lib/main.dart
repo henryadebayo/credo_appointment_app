@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'UI/homePage/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      builder: (child, context) => MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+        ),
+        home: const HomeScreen(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
