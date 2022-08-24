@@ -1,4 +1,4 @@
-import 'package:credo_appointment_app/UI/homePage/widget/home_small_widget.dart';
+import 'package:credo_appointment_app/UI/home_Page/widget/home_small_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
