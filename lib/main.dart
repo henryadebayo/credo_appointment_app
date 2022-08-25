@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'UI/Transaction_page/transactionsScreen.dart';
 import 'UI/home_Page/home_screen.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
-        home: const HomeScreen(),
+       // home: const HomeScreen(),
+        home: const TransactionsScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );

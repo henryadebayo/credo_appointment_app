@@ -61,462 +61,448 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(top: 16.0.h),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 16.0.w,
-                      ),
-                      child: Text(
-                        "Overview!",
-                        style: GoogleFonts.poppins(
-                            color: AppColors.appOxbloodColor,
-                            fontSize: 16.0.sp),
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 16.0.w,
                     ),
-                    SizedBox(
-                      height: 10.0.h,
+                    child: Text(
+                      "Overview!",
+                      style: GoogleFonts.poppins(
+                          color: AppColors.appOxbloodColor, fontSize: 16.0.sp),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 16.0.w,
-                      ),
-                      child: SizedBox(
-                        height: 110.0.h,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (context, int index) => Padding(
-                            padding: EdgeInsets.only(right: 16.0.w),
-                            child: Container(
-                              height: 110.0.h,
-                              width: 230.0.w,
-                              decoration: BoxDecoration(
-                                color: AppColors.appOxbloodColor,
-                                borderRadius: BorderRadius.circular(10.0.r),
+                  ),
+                  SizedBox(
+                    height: 10.0.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 16.0.w,
+                    ),
+                    child: SizedBox(
+                      height: 110.0.h,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (context, int index) => Padding(
+                          padding: EdgeInsets.only(right: 16.0.w),
+                          child: Container(
+                            height: 100.0.h,
+                            width: 230.0.w,
+                            decoration: BoxDecoration(
+                              color: AppColors.appOxbloodColor,
+                              borderRadius: BorderRadius.circular(10.0.r),
+                            ),
+                            child: Padding(
+                              padding:
+                                  EdgeInsets.only(left: 40.0.w, top: 18.0.h),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "247",
+                                    style: GoogleFonts.roboto(
+                                        color: Colors.white, fontSize: 35.0.sp),
+                                  ),
+                                  SizedBox(
+                                    height: 8.0.h,
+                                  ),
+                                  Text(
+                                    "Total requests",
+                                    style: GoogleFonts.roboto(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
                               ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.0.w,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        HomeSmallWidget(
+                          label: "Schedule",
+                          icon: Icons.error,
+                        ),
+                        HomeSmallWidget(
+                          label: "checkout",
+                          icon: Icons.error,
+                        ),
+                        HomeSmallWidget(
+                          label: "requests",
+                          icon: Icons.error,
+                        ),
+                        HomeSmallWidget(
+                          label: "Transactions",
+                          icon: Icons.error,
+                        ),
+                        HomeSmallWidget(
+                          label: "Employee",
+                          icon: Icons.error,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16.0.h,
+                  ),
+                  SizedBox(
+                    height: 120.0.w,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5.0.r),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        offset: Offset(0, 3.0),
+                                        blurRadius: 0.9)
+                                  ]),
                               child: Padding(
                                 padding:
-                                    EdgeInsets.only(left: 40.0.w, top: 18.0.h),
+                                    EdgeInsets.symmetric(horizontal: 8.0.w),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      "247",
-                                      style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontSize: 35.0.sp),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 8.0.h,
+                                        bottom: 8.0.h,
+                                      ),
+                                      child: Text(
+                                        "Sales Overview",
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(
                                       height: 8.0.h,
                                     ),
-                                    Text(
-                                      "Total requests",
-                                      style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.0.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.0.w,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          HomeSmallWidget(
-                            label: "Schedule",
-                            icon: Icons.error,
+                          SizedBox(
+                            width: 8.0.w,
                           ),
-                          HomeSmallWidget(
-                            label: "checkout",
-                            icon: Icons.error,
-                          ),
-                          HomeSmallWidget(
-                            label: "requests",
-                            icon: Icons.error,
-                          ),
-                          HomeSmallWidget(
-                            label: "Transactions",
-                            icon: Icons.error,
-                          ),
-                          HomeSmallWidget(
-                            label: "Employee",
-                            icon: Icons.error,
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5.0.r),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        offset: Offset(0, 3.0),
+                                        blurRadius: 0.9)
+                                  ]),
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 8.0.w),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 8.0.h,
+                                        bottom: 8.0.h,
+                                      ),
+                                      child: Text(
+                                        "Sales Overview",
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 8.0.h,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Wrap(
+                                          children: [
+                                            Icon(
+                                              Icons.shopping_bag,
+                                              color: AppColors.appOxbloodColor,
+                                              size: 33.0,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "sessions",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12.0),
+                                                ),
+                                                Text(
+                                                  "780",
+                                                  style: GoogleFonts.roboto(
+                                                      color: Colors.black,
+                                                      fontSize: 18.0),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 16.0.h,
-                    ),
-                    SizedBox(
-                      height: 120.0.w,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5.0.r),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Colors.grey,
-                                          offset: Offset(0, 3.0),
-                                          blurRadius: 0.9)
-                                    ]),
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 8.0.w),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 8.0.h,
-                                          bottom: 8.0.h,
-                                        ),
-                                        child: Text(
-                                          "Sales Overview",
-                                          style: GoogleFonts.roboto(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 8.0.h,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 8.0.w,
-                            ),
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5.0.r),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Colors.grey,
-                                          offset: Offset(0, 3.0),
-                                          blurRadius: 0.9)
-                                    ]),
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 8.0.w),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 8.0.h,
-                                          bottom: 8.0.h,
-                                        ),
-                                        child: Text(
-                                          "Sales Overview",
-                                          style: GoogleFonts.roboto(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 8.0.h,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Icon(
-                                                Icons.shopping_bag,
-                                                color:
-                                                    AppColors.appOxbloodColor,
-                                                size: 33.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "sessions",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12.0),
-                                                  ),
-                                                  Text(
-                                                    "780",
-                                                    style: GoogleFonts.roboto(
-                                                        color: Colors.black,
-                                                        fontSize: 18.0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           )),
