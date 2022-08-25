@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'UI/employee_page/employee_screen.dart';
+import 'UI/employee_page/add_employee_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
         ),
         // home: const HomeScreen(),
-        home: const EmployeeScreen(),
+        home: const AddEmployeeScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );
