@@ -49,7 +49,7 @@ class _EmployeeScreenState extends State<EmployeeScreen> {
                                 size: 40.0,
                               ),
                               Text(
-                                "Transactions",
+                                "Employee",
                                 style: GoogleFonts.poppins(
                                     color: Colors.white, fontSize: 15.0),
                               ),
