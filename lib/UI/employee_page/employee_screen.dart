@@ -1,18 +1,17 @@
-import 'package:credo_appointment_app/UI/Transaction_page/widgets/transaction_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/const/app_colors.dart';
 
-class TransactionsScreen extends StatefulWidget {
-  const TransactionsScreen({Key? key}) : super(key: key);
+class EmployeeScreen extends StatefulWidget {
+  const EmployeeScreen({Key? key}) : super(key: key);
 
   @override
-  State<TransactionsScreen> createState() => _TransactionsScreenState();
+  State<EmployeeScreen> createState() => _EmployeeScreenState();
 }
 
-class _TransactionsScreenState extends State<TransactionsScreen> {
+class _EmployeeScreenState extends State<EmployeeScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -75,61 +74,71 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.0.w),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10.0.r),
-                        topRight: Radius.circular(10.0.r)),
-                    boxShadow: [
-                      BoxShadow(
-                          color: AppColors.appOxbloodColor,
-                          offset: const Offset(0, 3.0),
-                          blurRadius: 0.9)
-                    ]),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 16.0.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Transaction",
-                            style: GoogleFonts.poppins(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8.0,
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 16.0.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Wrap(
+                          children: [
+                            Text(
+                              "+Add new employee",
+                              style: GoogleFonts.poppins(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 20.0.sp),
-                          ),
-                          Wrap(
-                            children: [
-                              Icon(
-                                Icons.filter_list_alt,
+                                //fontSize: 20.0.sp
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (context, _) => Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0.h),
+                          child: Container(
+                            height: 70.0.h,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0.r),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    offset: Offset(0.0, 0.5),
+                                    blurRadius: 0.5,
+                                  ),
+                                ]),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                radius: 25.0.r,
+                              ),
+                              title: Text(
+                                "Jonathan Hope",
+                                style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.w800),
+                              ),
+                              subtitle: Text(
+                                "Hairdresser Massager",
+                                style: GoogleFonts.roboto(),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
                                 color: AppColors.appOxbloodColor,
                               ),
-                              Text(
-                                "sort by",
-                                style: GoogleFonts.poppins(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  //fontSize: 20.0.sp
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
+                            ),
+                          ),
+                        ),
                       ),
-                      Expanded(
-                          child: ListView.builder(
-                        itemBuilder: (context, _) => TransactionWidget(),
-                      ))
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
