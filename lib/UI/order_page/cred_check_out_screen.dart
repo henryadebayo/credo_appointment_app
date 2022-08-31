@@ -34,11 +34,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               scaler: scaler,
               titleText: 'Checkout',
             ),
-            VeloxSizedBox(
+            const VeloxSizedBox(
               height: 3,
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(22, 16, 22, 16),
+              padding: const EdgeInsets.fromLTRB(22, 16, 22, 16),
               child: Container(
                 width: double.infinity,
                 height: scaler.sizer.setHeight(98),
@@ -47,7 +47,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     color: VeloxColors.white,
                     boxShadow: [VeloxColors.smallShadow]),
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(16, 18, 16, 14),
+                  padding: const EdgeInsets.fromLTRB(16, 18, 16, 14),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -77,7 +77,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           buildDropdownWidget(scaler)
                         ],
                       ),
-                      VeloxSizedBox(
+                      const VeloxSizedBox(
                         height: 4,
                       ),
                       Visibility(
@@ -105,7 +105,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       hasPrefixIcon: false,
                                       inputType: TextInputType.datetime,
                                     )),
-                                    VeloxSizedBox(
+                                    const VeloxSizedBox(
                                       width: 3,
                                     ),
                                     Expanded(
@@ -135,11 +135,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                         ),
                       ),
-                      VeloxSizedBox(
+                      const VeloxSizedBox(
                         height: 2,
                       ),
                       PaymentSummaryWidget(scaler: scaler),
-                      VeloxSizedBox(
+                      const VeloxSizedBox(
                         height: 2.5,
                       ),
                       SizedBox(
@@ -180,14 +180,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             padding: const EdgeInsets.fromLTRB(4, 1, 1, 1),
             child: Text(
               payOption,
-              style: TextStyle(
+              style: const TextStyle(
                   fontWeight: FontWeight.w500,
                   color: VeloxColors.restaurantTopButton),
             ),
           ),
           PopupMenuButton(
-              padding: EdgeInsets.fromLTRB(1, 1, 4, 1),
-              icon: Icon(
+              padding: const EdgeInsets.fromLTRB(1, 1, 4, 1),
+              icon: const Icon(
                 Icons.expand_more,
               ),
               onSelected: (String value) {
@@ -204,11 +204,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               elevation: 20,
               enableFeedback: true,
               itemBuilder: (context) => [
-                    PopupMenuItem(
+                    const PopupMenuItem(
                       child: Text('Card'),
                       value: 'Card',
                     ),
-                    PopupMenuItem(child: Text('₦ Cash'), value: 'Cash')
+                    const PopupMenuItem(child: Text('₦ Cash'), value: 'Cash')
                   ]),
         ]),
       ),
@@ -250,12 +250,12 @@ class PaymentSummaryWidget extends StatelessWidget {
                 fit: BoxFit.scaleDown,
               ),
             ),
-            VeloxSizedBox(
+            const VeloxSizedBox(
               width: 2,
             ),
             Column(
               children: [
-                Text('Elon Hush'),
+                const Text('Elon Hush'),
                 Text(
                   '1 Hour Ago',
                   style: TextStyle(fontSize: scaler.fontSizer.sp(40)),
@@ -264,13 +264,13 @@ class PaymentSummaryWidget extends StatelessWidget {
             )
           ],
         ),
-        VeloxSizedBox(
+        const VeloxSizedBox(
           height: 2,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('HairCut'),
+            const Text('HairCut'),
             Text(
               'Total: ₦80',
               style: TextStyle(
@@ -316,7 +316,7 @@ class CustomCardInfoField extends StatelessWidget {
               fontSize: scaler.fontSizer.sp(65)),
         ),
         Container(
-          margin: EdgeInsets.only(top: 10, bottom: 13),
+          margin: const EdgeInsets.only(top: 10, bottom: 13),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: VeloxColors.dropDownColor),
@@ -330,8 +330,9 @@ class CustomCardInfoField extends StatelessWidget {
                       )
                     : null,
                 hintText: hint,
-                hintStyle: TextStyle(color: Color.fromRGBO(149, 147, 147, 1)),
-                focusedBorder: OutlineInputBorder(
+                hintStyle: const TextStyle(
+                    color: const Color.fromRGBO(149, 147, 147, 1)),
+                focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: VeloxColors.restaurantTopColor),
                 )),
           ),
