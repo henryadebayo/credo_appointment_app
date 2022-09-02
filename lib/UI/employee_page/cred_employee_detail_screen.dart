@@ -5,7 +5,7 @@ import '../../utils/const/app_colors.dart';
 import '../../utils/const/app_sizedBox.dart';
 import '../../utils/const/images.dart';
 import '../../utils/dimensions/dimension.dart';
-import '../schedule_page/widets/res_card_widget.dart';
+import '../schedule_page/widets/topCard_widget.dart';
 
 class EmployeeDetailScreen extends StatefulWidget {
   const EmployeeDetailScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _EmployeeDetailScreenState extends State<EmployeeDetailScreen> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RestaurantTopCard(
+            TopCard(
               scaler: scaler,
               titleIcon: VeloxSvgs.personIcon,
               titleText: "Employee Detail",
@@ -60,8 +60,7 @@ class _EmployeeDetailScreenState extends State<EmployeeDetailScreen> {
               Row(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage(""))),
+                    decoration: const BoxDecoration(color: Colors.green),
                     height: 50,
                     width: 50,
                   ),
@@ -70,16 +69,16 @@ class _EmployeeDetailScreenState extends State<EmployeeDetailScreen> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "employeeName",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: VeloxColors.black,
                             fontWeight: FontWeight.w500),
                       ),
                       Text(
                         "  mployeeInfo.jobTitle",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: VeloxColors.lightGrey,
                             fontWeight: FontWeight.w400),
                       ),

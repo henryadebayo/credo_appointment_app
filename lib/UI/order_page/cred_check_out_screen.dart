@@ -1,13 +1,15 @@
+import 'package:credo_appointment_app/UI/order_page/widgets/custom_card_info_widget.dart';
+import 'package:credo_appointment_app/UI/order_page/widgets/payment_summary_widget.dart';
 import 'package:credo_appointment_app/utils/extentions/extention.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/const/app_button.dart';
 import '../../utils/const/app_colors.dart';
 import '../../utils/const/app_sizedBox.dart';
 import '../../utils/const/images.dart';
 import '../../utils/dimensions/dimension.dart';
-import '../schedule_page/widets/res_card_widget.dart';
+import '../schedule_page/widets/topCard_widget.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -30,7 +32,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RestaurantTopCard(
+            TopCard(
               scaler: scaler,
               titleText: 'Checkout',
             ),
@@ -45,7 +47,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: VeloxColors.white,
-                    boxShadow: [VeloxColors.smallShadow]),
+                    boxShadow: const [VeloxColors.smallShadow]),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 18, 16, 14),
                   child: Column(
@@ -62,7 +64,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   'Payment Details',
                                   style: TextStyle(
                                       color: VeloxColors.restaurantTopColor,
-                                      fontWeight: FontWeight.w600,
                                       fontSize: scaler.fontSizer.sp(65)),
                                 ),
                                 Text(
@@ -82,57 +83,52 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                       Visibility(
                         visible: isPayWitthCard,
-                        child: Container(
-                          child: Column(
-                            children: [
-                              CustomCardInfoField(
-                                scaler: scaler,
-                                fieldLabel: 'Card Details *',
-                                hint: '0000 1111 2222 3333',
-                                hasPrefixIcon: true,
-                                prefixIconString: VeloxSvgs.card_icon,
-                              ),
-                              Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                        child: CustomCardInfoField(
-                                      scaler: scaler,
-                                      fieldLabel: 'Expiry Date *',
-                                      hint: '00/20',
-                                      hasPrefixIcon: false,
-                                      inputType: TextInputType.datetime,
-                                    )),
-                                    const VeloxSizedBox(
-                                      width: 3,
-                                    ),
-                                    Expanded(
-                                        child: CustomCardInfoField(
-                                      scaler: scaler,
-                                      fieldLabel: 'Cvv *',
-                                      hint: '001',
-                                      hasPrefixIcon: false,
-                                    ))
-                                  ],
+                        child: Column(
+                          children: [
+                            CustomCardInfoField(
+                              scaler: scaler,
+                              fieldLabel: 'Card Details *',
+                              hint: '0000 1111 2222 3333',
+                              hasPrefixIcon: true,
+                              prefixIconString: VeloxSvgs.card_icon,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                    child: CustomCardInfoField(
+                                  scaler: scaler,
+                                  fieldLabel: 'Expiry Date *',
+                                  hint: '00/20',
+                                  hasPrefixIcon: false,
+                                  inputType: TextInputType.datetime,
+                                )),
+                                const VeloxSizedBox(
+                                  width: 3,
                                 ),
-                              ),
-                              CustomCardInfoField(
-                                scaler: scaler,
-                                fieldLabel: 'Card Holders Name*',
-                                hint: 'John Doe',
-                                hasPrefixIcon: false,
-                                inputType: TextInputType.name,
-                              ),
-                              CustomCardInfoField(
-                                scaler: scaler,
-                                fieldLabel: 'Any Discount Number?',
-                                hint: '',
-                                hasPrefixIcon: false,
-                              ),
-                            ],
-                          ),
+                                Expanded(
+                                    child: CustomCardInfoField(
+                                  scaler: scaler,
+                                  fieldLabel: 'Cvv *',
+                                  hint: '001',
+                                  hasPrefixIcon: false,
+                                ))
+                              ],
+                            ),
+                            CustomCardInfoField(
+                              scaler: scaler,
+                              fieldLabel: 'Card Holders Name*',
+                              hint: 'John Doe',
+                              hasPrefixIcon: false,
+                              inputType: TextInputType.name,
+                            ),
+                            CustomCardInfoField(
+                              scaler: scaler,
+                              fieldLabel: 'Any Discount Number?',
+                              hint: '',
+                              hasPrefixIcon: false,
+                            ),
+                          ],
                         ),
                       ),
                       const VeloxSizedBox(
@@ -157,9 +153,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                 ),
               ),
-              /* AnimatedSwitcher(
-                  duration: const Duration(seconds: 1),
-                  child: _currentPayOptionWidget), */
             ),
           ],
         ),
@@ -205,10 +198,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               enableFeedback: true,
               itemBuilder: (context) => [
                     const PopupMenuItem(
-                      child: Text('Card'),
                       value: 'Card',
+                      child: Text('Card'),
                     ),
-                    const PopupMenuItem(child: Text('₦ Cash'), value: 'Cash')
+                    const PopupMenuItem(value: 'Cash', child: Text('₦ Cash'))
                   ]),
         ]),
       ),
@@ -218,126 +211,4 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
 Widget selectWidgetInView(Widget view) {
   return view;
-}
-
-class PaymentSummaryWidget extends StatelessWidget {
-  const PaymentSummaryWidget({
-    Key? key,
-    required this.scaler,
-  }) : super(key: key);
-
-  final VeloxScaleUtil scaler;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2.5),
-                color: VeloxColors.restaurantTopButton,
-              ),
-              height: 31,
-              width: 31,
-              child: SvgPicture.asset(
-                'assets/user.svg',
-                height: 5,
-                width: 5,
-                color: VeloxColors.white,
-                fit: BoxFit.scaleDown,
-              ),
-            ),
-            const VeloxSizedBox(
-              width: 2,
-            ),
-            Column(
-              children: [
-                const Text('Elon Hush'),
-                Text(
-                  '1 Hour Ago',
-                  style: TextStyle(fontSize: scaler.fontSizer.sp(40)),
-                ),
-              ],
-            )
-          ],
-        ),
-        const VeloxSizedBox(
-          height: 2,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text('HairCut'),
-            Text(
-              'Total: ₦80',
-              style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: scaler.fontSizer.sp(65),
-                  color: VeloxColors.restaurantTopButton),
-            ),
-          ],
-        )
-      ],
-    );
-  }
-}
-
-class CustomCardInfoField extends StatelessWidget {
-  const CustomCardInfoField(
-      {Key? key,
-      required this.scaler,
-      required this.hint,
-      required this.fieldLabel,
-      this.prefixIconString,
-      required this.hasPrefixIcon,
-      this.inputType = TextInputType.number})
-      : super(key: key);
-
-  final VeloxScaleUtil scaler;
-  final String hint;
-  final String fieldLabel;
-  final String? prefixIconString;
-  final bool hasPrefixIcon;
-  final TextInputType inputType;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          fieldLabel,
-          style: TextStyle(
-              color: VeloxColors.restaurantTopButton,
-              fontWeight: FontWeight.w600,
-              fontSize: scaler.fontSizer.sp(65)),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 10, bottom: 13),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: VeloxColors.dropDownColor),
-          child: TextField(
-            keyboardType: inputType,
-            decoration: InputDecoration(
-                prefixIcon: hasPrefixIcon
-                    ? SvgPicture.asset(
-                        prefixIconString ?? '',
-                        fit: BoxFit.scaleDown,
-                      )
-                    : null,
-                hintText: hint,
-                hintStyle: const TextStyle(
-                    color: const Color.fromRGBO(149, 147, 147, 1)),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: VeloxColors.restaurantTopColor),
-                )),
-          ),
-        ),
-      ],
-    );
-  }
 }

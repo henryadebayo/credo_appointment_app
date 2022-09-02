@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'UI/home_Page/cred_home_screen.dart';
+import 'UI/schedule_page/create_schedule.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
         ),
         // home: const HomeScreen(),
-        home: const AppointmentHomeScreen(),
+        home: const CreateScheduleScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );

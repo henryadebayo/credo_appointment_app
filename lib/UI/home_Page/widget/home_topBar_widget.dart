@@ -73,7 +73,6 @@ class HomeTopBar extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     boxShadow: const [VeloxColors.shadow1],
-                    // color: VeloxColors.white,
                     borderRadius: BorderRadius.circular(8)),
                 child: TextFormField(
                     decoration: InputDecoration(
@@ -115,21 +114,6 @@ class HomeTopBar extends StatelessWidget {
                         return errorMessage;
                       }
                     }),
-
-                // TextField(
-                //   decoration: InputDecoration(
-                //     hintText: 'Search',
-                //     prefixIcon: Padding(
-                //         padding: const EdgeInsets.symmetric(horizontal: 16),
-                //         child: SvgPicture.asset(
-                //           "assets/restaurant_search.svg",
-                //           width: 16,
-                //           height: 16,
-                //         )),
-                //     filled: true,
-                //     fillColor: Colors.white,
-                //   ),
-                // ),
               ),
             ),
           ),

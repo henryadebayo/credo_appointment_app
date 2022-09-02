@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../utils/const/app_sizedBox.dart';
 import '../../utils/const/images.dart';
 import '../../utils/dimensions/dimension.dart';
-import '../schedule_page/widets/res_card_widget.dart';
+import '../schedule_page/widets/topCard_widget.dart';
 import 'widgets/employee_mock_data.dart';
 
 class EmployeeEditScreen extends StatefulWidget {
@@ -51,7 +51,7 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RestaurantTopCard(
+            TopCard(
               scaler: scaler,
               titleIcon: VeloxSvgs.personIcon,
               titleText: "Edit Employee",

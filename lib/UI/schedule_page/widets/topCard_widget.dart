@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/const/app_colors.dart';
 import '../../../utils/const/app_sizedBox.dart';
 import '../../../utils/dimensions/dimension.dart';
 
-class RestaurantTopCard extends StatelessWidget {
-  const RestaurantTopCard({
+class TopCard extends StatelessWidget {
+  const TopCard({
     Key? key,
     required this.scaler,
     this.storeName,
@@ -32,7 +33,7 @@ class RestaurantTopCard extends StatelessWidget {
             width: double.infinity,
             color: VeloxColors.restaurantTopColor,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(24, 30, 20, 12),
+              padding: const EdgeInsets.fromLTRB(24, 30, 20, 12),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +57,7 @@ class RestaurantTopCard extends StatelessWidget {
                                 height: 30.35,
                                 width: 30.56,
                               ),
-                              VeloxSizedBox(
+                              const VeloxSizedBox(
                                 width: 1,
                               ),
                               Text(
@@ -71,7 +72,7 @@ class RestaurantTopCard extends StatelessWidget {
                           SvgPicture.asset(
                               "assets/restaurant_hamburger_icon.svg")
                         ]),
-                    Spacer(),
+                    const Spacer(),
                   ]),
             ),
           ),
@@ -79,26 +80,51 @@ class RestaurantTopCard extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               decoration: BoxDecoration(
                   boxShadow: [VeloxColors.shadow1],
-                  color: VeloxColors.white,
                   borderRadius: BorderRadius.circular(8)),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  prefixIcon: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+              child: TextFormField(
+                  decoration: InputDecoration(
+                    disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0.r),
+                      borderSide: const BorderSide(color: Colors.white),
+                    ),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0.r),
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0.r),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 19.w,
+                      vertical: 15.h,
+                    ),
+                    hintText: "Search",
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: SvgPicture.asset(
                         "assets/restaurant_search.svg",
                         width: 16,
                         height: 16,
-                      )),
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-              ),
+                      ),
+                    ),
+                  ),
+                  onSaved: (String? lastName) {},
+                  validator: (String? lastName) {
+                    if (lastName!.isEmpty) {
+                      String errorMessage;
+                      errorMessage = "please fill in your last name";
+                      return errorMessage;
+                    }
+                  }),
             ),
           ),
         ),

@@ -1,4 +1,3 @@
-import 'package:credo_appointment_app/UI/schedule_page/widets/res_card_widget.dart';
 import 'package:credo_appointment_app/utils/extentions/extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,6 +6,7 @@ import '../../utils/const/app_colors.dart';
 import '../../utils/const/app_sizedBox.dart';
 import '../../utils/const/images.dart';
 import '../../utils/dimensions/dimension.dart';
+import '../schedule_page/widets/topCard_widget.dart';
 
 class ScheduleScreen extends StatefulWidget {
   const ScheduleScreen({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              RestaurantTopCard(
+              TopCard(
                 scaler: scaler,
                 titleText: "Schedule",
               ),
