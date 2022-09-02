@@ -25,7 +25,7 @@ class AppointmentHomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RestaurantHomeTopBar(scaler: scaler, storeName: storeName),
+            HomeTopBar(scaler: scaler, storeName: storeName),
             const VeloxSizedBox(
               height: 4,
             ),
@@ -84,22 +84,19 @@ class AppointmentHomeScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 16.0.w,
+                      horizontal: 5.0.w,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ToolOptionItem(
-                            scaler: scaler, index: 0, onClick: () {}),
-                        ToolOptionItem(
-                            scaler: scaler, index: 1, onClick: () {}),
-                        ToolOptionItem(
-                            scaler: scaler, index: 2, onClick: () {}),
-                        ToolOptionItem(
-                            scaler: scaler, index: 3, onClick: () {}),
-                        ToolOptionItem(
-                            scaler: scaler, index: 4, onClick: () {}),
-                      ],
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ToolOptionItem(index: 0, onClick: () {}),
+                          ToolOptionItem(index: 1, onClick: () {}),
+                          ToolOptionItem(index: 2, onClick: () {}),
+                          ToolOptionItem(index: 3, onClick: () {}),
+                          ToolOptionItem(index: 4, onClick: () {}),
+                        ],
+                      ),
                     ),
                   ),
                   const VeloxSizedBox(

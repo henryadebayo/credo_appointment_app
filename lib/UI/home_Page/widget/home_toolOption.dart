@@ -4,30 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../utils/dimensions/dimension.dart';
 import 'appointment_dat.dart';
 
 class ToolOptionItem extends StatelessWidget {
   const ToolOptionItem({
     Key? key,
-    required this.scaler,
     required this.index,
     required this.onClick,
   }) : super(key: key);
 
-  final VeloxScaleUtil scaler;
   final int index;
   final Function onClick;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        onClick();
-      },
-      child: Column(
-        children: [
-          Container(
+    return Column(
+      children: [
+        InkWell(
+          onTap: () {
+            onClick();
+          },
+          child: Container(
             height: 50.0.h,
             width: 50.0.w,
             decoration: BoxDecoration(
@@ -46,16 +43,16 @@ class ToolOptionItem extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 8.0.h,
-          ),
-          Text(
-            appointmentToolOption[index].itemLabel,
-            style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w500, fontSize: 10.0.sp),
-          )
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 8.0.h,
+        ),
+        Text(
+          appointmentToolOption[index].itemLabel,
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w500, fontSize: 10.0.sp),
+        )
+      ],
     );
   }
 }

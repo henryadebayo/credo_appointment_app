@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/const/app_button.dart';
 import '../../../utils/const/app_colors.dart';
 import '../../../utils/const/app_sizedBox.dart';
 import '../../../utils/dimensions/dimension.dart';
 
-class RestaurantHomeTopBar extends StatelessWidget {
-  const RestaurantHomeTopBar({
+class HomeTopBar extends StatelessWidget {
+  const HomeTopBar({
     Key? key,
     required this.scaler,
     required this.storeName,
@@ -22,7 +23,7 @@ class RestaurantHomeTopBar extends StatelessWidget {
       height: scaler.sizer.setHeight(30),
       color: VeloxColors.white,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Stack(children: [
           Align(
             alignment: Alignment.topCenter,
@@ -31,7 +32,7 @@ class RestaurantHomeTopBar extends StatelessWidget {
               width: double.infinity,
               color: VeloxColors.restaurantTopColor,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(24, 30, 0, 12),
+                padding: const EdgeInsets.fromLTRB(24, 30, 0, 12),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +47,7 @@ class RestaurantHomeTopBar extends StatelessWidget {
                               fontSize: 60,
                               text: 'Setup Guide',
                               onPressed: () {})),
-                      VeloxSizedBox(
+                      const VeloxSizedBox(
                         height: 1,
                       ),
                       RichText(
@@ -56,11 +57,11 @@ class RestaurantHomeTopBar extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 fontSize: scaler.fontSizer.sp(65)),
                             children: [
-                              TextSpan(text: 'Welcome back,\n'),
+                              const TextSpan(text: 'Welcome back,\n'),
                               TextSpan(text: storeName)
                             ]),
                       ),
-                      Spacer(),
+                      const Spacer(),
                     ]),
               ),
             ),
@@ -68,26 +69,67 @@ class RestaurantHomeTopBar extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
                 decoration: BoxDecoration(
-                    boxShadow: [VeloxColors.shadow1],
-                    color: VeloxColors.white,
+                    boxShadow: const [VeloxColors.shadow1],
+                    // color: VeloxColors.white,
                     borderRadius: BorderRadius.circular(8)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
+                child: TextFormField(
+                    decoration: InputDecoration(
+                      disabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4.0.r),
+                        borderSide: const BorderSide(color: Colors.white),
+                      ),
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0.r),
+                        borderSide: const BorderSide(
+                          color: Colors.white,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4.0.r),
+                        borderSide: const BorderSide(color: Colors.black),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 19.w,
+                        vertical: 15.h,
+                      ),
+                      hintText: "Search",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: SvgPicture.asset(
                           "assets/restaurant_search.svg",
                           width: 16,
                           height: 16,
-                        )),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
+                        ),
+                      ),
+                    ),
+                    onSaved: (String? lastName) {},
+                    validator: (String? lastName) {
+                      if (lastName!.isEmpty) {
+                        String errorMessage;
+                        errorMessage = "please fill in your last name";
+                        return errorMessage;
+                      }
+                    }),
+
+                // TextField(
+                //   decoration: InputDecoration(
+                //     hintText: 'Search',
+                //     prefixIcon: Padding(
+                //         padding: const EdgeInsets.symmetric(horizontal: 16),
+                //         child: SvgPicture.asset(
+                //           "assets/restaurant_search.svg",
+                //           width: 16,
+                //           height: 16,
+                //         )),
+                //     filled: true,
+                //     fillColor: Colors.white,
+                //   ),
+                // ),
               ),
             ),
           ),
