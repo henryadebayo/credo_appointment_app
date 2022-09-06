@@ -9,15 +9,14 @@ import '../../utils/dimensions/dimension.dart';
 import '../home_Page/widget/appointment_dat.dart';
 import '../schedule_page/widets/topCard_widget.dart';
 
-class AppointmentRequestsScreen extends StatefulWidget {
-  const AppointmentRequestsScreen({Key? key}) : super(key: key);
+class RequestsScreen extends StatefulWidget {
+  const RequestsScreen({Key? key}) : super(key: key);
 
   @override
-  State<AppointmentRequestsScreen> createState() =>
-      _AppointmentRequestsScreenState();
+  State<RequestsScreen> createState() => _RequestsScreenState();
 }
 
-class _AppointmentRequestsScreenState extends State<AppointmentRequestsScreen> {
+class _RequestsScreenState extends State<RequestsScreen> {
   @override
   Widget build(BuildContext context) {
     final scaler = context.scaler;

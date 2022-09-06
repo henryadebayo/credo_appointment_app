@@ -1,3 +1,4 @@
+import 'package:credo_appointment_app/Navigation/nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
         ),
         // home: const HomeScreen(),
         home: const CreateScheduleScreen(),
+        onGenerateRoute: NavigationService.generateRoute,
+        initialRoute: "home",
         debugShowCheckedModeBanner: false,
       ),
     );

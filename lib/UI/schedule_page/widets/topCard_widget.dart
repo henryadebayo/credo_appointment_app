@@ -69,8 +69,13 @@ class TopCard extends StatelessWidget {
                               )
                             ],
                           ),
-                          SvgPicture.asset(
-                              "assets/restaurant_hamburger_icon.svg")
+                          Container(
+                            height: 50,
+                            width: 50,
+                            color: Colors.transparent,
+                          ),
+                          // SvgPicture.asset(
+                          //     "assets/restaurant_hamburger_icon.svg")
                         ]),
                     const Spacer(),
                   ]),

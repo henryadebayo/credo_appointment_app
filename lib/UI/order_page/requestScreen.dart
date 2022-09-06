@@ -1,76 +1,33 @@
 import 'package:credo_appointment_app/UI/order_page/widgets/requests_widget.dart';
+import 'package:credo_appointment_app/utils/extentions/extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/const/app_colors.dart';
+import '../../utils/const/app_sizedBox.dart';
+import '../schedule_page/widets/topCard_widget.dart';
 
-class RequestsScreen extends StatefulWidget {
-  const RequestsScreen({Key? key}) : super(key: key);
+class CredRequestsScreen extends StatefulWidget {
+  const CredRequestsScreen({Key? key}) : super(key: key);
 
   @override
-  State<RequestsScreen> createState() => _RequestsScreenState();
+  State<CredRequestsScreen> createState() => _CredRequestsScreenState();
 }
 
-class _RequestsScreenState extends State<RequestsScreen> {
+class _CredRequestsScreenState extends State<CredRequestsScreen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final scaler = context.scaler;
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            height: height / 3 - 70,
-            width: width,
-            color: AppColors.appBarAshColor,
-            child: SafeArea(
-              child: Padding(
-                padding:
-                    EdgeInsets.only(left: 16.0.w, right: 16.0.h, top: 16.0.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.white,
-                            )),
-                        Wrap(
-                            crossAxisAlignment: WrapCrossAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.person,
-                                color: Colors.white,
-                                size: 40.0,
-                              ),
-                              Text(
-                                "Requests",
-                                style: GoogleFonts.poppins(
-                                    color: Colors.white, fontSize: 15.0),
-                              ),
-                            ]),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.view_headline,
-                            color: Colors.white,
-                            size: 40.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+          TopCard(
+            scaler: scaler,
+            titleText: 'Requests',
           ),
-          SizedBox(
-            height: 20.0.h,
+          const VeloxSizedBox(
+            height: 3,
           ),
           Expanded(
             child: Padding(

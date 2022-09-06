@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../Navigation/routes.dart';
 import '../../../utils/const/app_colors.dart';
 import '../../../utils/const/app_sizedBox.dart';
 import '../../../utils/dimensions/dimension.dart';
@@ -21,27 +20,25 @@ class RestaurantOrderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           boxShadow: [VeloxColors.smallShadow],
           color: VeloxColors.white,
           borderRadius: BorderRadius.all(Radius.circular(10))),
       child: Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Column(children: [
-            NotePadTab(tabItems: ['Ongoing', 'Other Orders']),
-            VeloxSizedBox(
+            const NotePadTab(tabItems: ['Ongoing', 'Other Orders']),
+            const VeloxSizedBox(
               height: 1,
             ),
-            Container(
+            SizedBox(
               height: scaler.sizer.setHeight(height),
               child: ListView.builder(
                   itemCount: orderItem.length,
                   itemBuilder: (context, index) => InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, VeloxRoutes.orderDetail);
-                        },
+                        onTap: () {},
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(5, 12, 5, 10),
+                          padding: const EdgeInsets.fromLTRB(5, 12, 5, 10),
                           child: Row(
                             children: [
                               Container(
@@ -59,7 +56,7 @@ class RestaurantOrderContainer extends StatelessWidget {
                                   fit: BoxFit.scaleDown,
                                 ),
                               ),
-                              VeloxSizedBox(
+                              const VeloxSizedBox(
                                 width: 1.5,
                               ),
                               Expanded(
@@ -70,7 +67,7 @@ class RestaurantOrderContainer extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              VeloxSizedBox(
+                              const VeloxSizedBox(
                                 width: 1.6,
                               ),
                               Expanded(
@@ -79,12 +76,12 @@ class RestaurantOrderContainer extends StatelessWidget {
                                   maxLines: 3,
                                 ),
                               ),
-                              VeloxSizedBox(
+                              const VeloxSizedBox(
                                 width: 1.8,
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsets.all(3),
+                                  padding: const EdgeInsets.all(3),
                                   child: Container(
                                     height: scaler.sizer.setHeight(6),
                                     width: scaler.sizer.setWidth(12),
@@ -94,8 +91,8 @@ class RestaurantOrderContainer extends StatelessWidget {
                                             ? VeloxColors.restaurantgreen
                                             : VeloxColors.restaurantorderRed),
                                     child: Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 6),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 6),
                                       child: Column(
                                         children: [
                                           Text(

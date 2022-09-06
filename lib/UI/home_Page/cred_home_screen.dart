@@ -12,8 +12,8 @@ import '../../utils/const/app_colors.dart';
 import '../../utils/const/app_sizedBox.dart';
 import '../../utils/const/images.dart';
 
-class AppointmentHomeScreen extends StatelessWidget {
-  const AppointmentHomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
   final String? storeName = 'Katy\'s Kitchen';
   @override
   Widget build(BuildContext context) {
@@ -90,11 +90,33 @@ class AppointmentHomeScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          ToolOptionItem(index: 0, onClick: () {}),
-                          ToolOptionItem(index: 1, onClick: () {}),
-                          ToolOptionItem(index: 2, onClick: () {}),
-                          ToolOptionItem(index: 3, onClick: () {}),
-                          ToolOptionItem(index: 4, onClick: () {}),
+                          ToolOptionItem(
+                              index: 0,
+                              onClick: () {
+                                Navigator.pushNamed(context, "ScheduleScreen");
+                              }),
+                          ToolOptionItem(
+                              index: 1,
+                              onClick: () {
+                                Navigator.pushNamed(context, "CheckoutScreen");
+                              }),
+                          ToolOptionItem(
+                              index: 2,
+                              onClick: () {
+                                Navigator.pushNamed(context, "RequestsScreen");
+                              }),
+                          ToolOptionItem(
+                              index: 3,
+                              onClick: () {
+                                Navigator.pushNamed(
+                                    context, "TransactionScreen");
+                              }),
+                          ToolOptionItem(
+                              index: 4,
+                              onClick: () {
+                                Navigator.pushNamed(
+                                    context, "EmployeeDetailScreen");
+                              }),
                         ],
                       ),
                     ),
